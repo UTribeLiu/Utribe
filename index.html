@@ -38,7 +38,7 @@
         document.body.style.backgroundImage = `url('./img/${Math.floor(Math.random() * 5) + 1  }.jpg')`;
         console.log(document.body.style.backgroundImage);
         let currentYear = new Date().getFullYear();
-        let targetDate = new Date(`Juni 6, ${new Date().getFullYear()} 10:00:00`);
+        let targetDate = new Date(`${new Date().getFullYear()}-06-06 10:00:00`);
 
         document.querySelector('.countdown-item.music').addEventListener('click',function(){
             var audio = document.getElementById("musika");
