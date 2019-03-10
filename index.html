@@ -17,7 +17,7 @@
 <body>
     <style>
     </style>
-    <audio src="fet.ogg" type="audio/ogg" autoplay></audio>
+    <audio id="musika" src="fet.ogg" type="audio/ogg" autoplay></audio>
 
     <main>
         <h1>2019-06-06 D-DAGEN AKA Dagus Däckus</h1>
@@ -26,6 +26,8 @@
             <div class="countdown-item hours">0</div>
             <div class="countdown-item minutes">0</div>
             <div class="countdown-item seconds">0</div>
+            <div class="countdown-item music">Play Music</div>
+
         </div>
     </main>
 
@@ -37,6 +39,14 @@
         console.log(document.body.style.backgroundImage);
         let currentYear = new Date().getFullYear();
         let targetDate = new Date(`Juni 6, ${new Date().getFullYear()} 10:00:00`);
+
+        document.querySelector('.countdown-item.music').addEventListener('click',function(){
+            var audio = document.getElementById("musika");
+            audio.play();
+
+        });
+
+
         let onStart = () => {
             document.querySelectorAll('.countdown-item').forEach(item => item.classList.add('show'))
         }
@@ -48,6 +58,8 @@
         };
         let options = new LsCountdownOptions({ targetDate, onStart, onTick });
         let countdown = new LsCountdown(options);
+
+
 
         countdown.start();
         window.mycountdown = countdown;
